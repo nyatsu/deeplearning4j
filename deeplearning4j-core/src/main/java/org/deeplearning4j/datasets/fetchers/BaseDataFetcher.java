@@ -86,7 +86,7 @@ public abstract class BaseDataFetcher implements DataSetFetcher {
 			inputs.putRow(i, examples.get(i).getFeatureMatrix());
 			labels.putRow(i,examples.get(i).getLabels());
 		}
-		curr = new DataSet(inputs,labels);
+		curr = new DataSet(inputs,labels);		//把list<DataSet>转换成DataSet
         examples.clear();
 
 	}
@@ -124,6 +124,14 @@ public abstract class BaseDataFetcher implements DataSetFetcher {
 	@Override
 	public int cursor() {
 		return cursor;
+	}
+
+	public int getCursor() {
+		return cursor;
+	}
+
+	public void setCursor(int cursor) {
+		this.cursor = cursor;
 	}
 	
 	

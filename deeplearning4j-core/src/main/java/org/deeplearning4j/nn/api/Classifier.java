@@ -34,6 +34,7 @@ public interface Classifier extends Model {
 
 
     /**
+     * 返回训练的F1值
      * Sets the input and labels and returns a score for the prediction
      * wrt true labels
      * @param data the data to score
@@ -42,6 +43,7 @@ public interface Classifier extends Model {
     double score(DataSet data);
 
     /**
+     * 返回预测的F1值
      * Returns the f1 score for the given examples.
      * Think of this to be like a percentage right.
      * The higher the number the more it got right.
@@ -53,14 +55,17 @@ public interface Classifier extends Model {
     double score(INDArray examples, INDArray labels);
 
     /**
+     * 返回可能的分类标签
      * Returns the number of possible labels
      * @return the number of possible labels for this classifier
      */
     int numLabels();
-
+    
+    
     void fit(DataSetIterator iter);
 
     /**
+     * 
      * Takes in a list of examples
      * For each row, returns a label
      * @param examples the examples to classify (one example in each row)
