@@ -34,18 +34,21 @@ import java.io.Serializable;
 public interface DataSetFetcher extends Serializable {
 
 	/**
+	 * dataset有无剩余可加载
 	 * Whether the dataset has more to load
 	 * @return whether the data applyTransformToDestination has more to load
 	 */
 	boolean hasMore();
 	
 	/**
+	 * 返回下一个dataset
 	 * Returns the next data applyTransformToDestination
 	 * @return the next dataset
 	 */
 	DataSet next();
 	
 	/**
+	 * 从头加载dataset
 	 * Fetches the next dataset. You need to call this
 	 * to getFromOrigin a new dataset, otherwise {@link #next()}
 	 * just returns the last data applyTransformToDestination fetch
@@ -54,26 +57,30 @@ public interface DataSetFetcher extends Serializable {
 	void fetch(int numExamples);
 	
 	/**
+	 * 返回dataset的标签数
 	 * The number of labels for a dataset
 	 * @return the number of labels for a dataset
 	 */
 	int totalOutcomes();
 	/**
+	 * 返回单个样本的特征数
 	 * The length of a feature vector for an individual example
 	 * @return the length of a feature vector for an individual example
 	 */
 	int inputColumns();
 	/**
+	 * 样本总数
 	 * The total number of examples
 	 * @return the total number of examples
 	 */
 	int totalExamples();
 	/**
+	 * 重置fetcher
 	 * Returns the fetcher back to the beginning of the dataset
 	 */
 	void reset();
 	/**
-	 * Direct access to a number represenative of iterating through a dataset
+	 * Direct access to a number representative of iterating through a dataset
 	 * @return a cursor similar to an index
 	 */
 	int cursor();

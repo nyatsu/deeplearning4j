@@ -26,6 +26,7 @@ import java.util.Iterator;
 
 
 /**
+ * 数据集迭代器接口，为神经网络准备数据
  * A DataSetIterator handles
  * traversing through a dataset and preparing
  * 
